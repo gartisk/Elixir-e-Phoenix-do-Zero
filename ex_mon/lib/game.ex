@@ -1,6 +1,8 @@
 defmodule ExMon.Game do
   # __MODULO__: Utilizamos para buscar o nome do próprio módulo.
   # _ : Uso de underline, utilizamos para ignorar o valor.
+
+  alias ExMon.Player
   use Agent
 
   def start(computer, player) do
@@ -13,10 +15,26 @@ defmodule ExMon.Game do
   end
 
   def update(state) do
-    Agent.update(__MODULE__, fn _ -> state end )
+    Agent.update(__MODULE__, fn _ -> update_game_status(state) end )
   end
 
   def player, do: Map.get(info(), :player)
   def turn, do: Map.get(info(), :turn)
   def fetch_player(player), do: Map.get(info(), player)
+
+  defp update_game_status(
+      %{player: %Player{life: player_life}, computer: %Player{life: computer_life}} = state
+    )
+    when player_life == 0 or computer_life == 0,
+    do: Map.put(state, :status, :game_over)
+
+  defp update_game_status(state) do
+    state
+    |> Map.put(:status, :continue)
+    |> update_turn()
+
+  end
+
+  defp update_turn(%{turn: :player} = state), do: Map.put(state, :turn, :computer)
+  defp update_turn(%{turn: :computer} = state), do: Map.put(state, :turn, :player)
 end
