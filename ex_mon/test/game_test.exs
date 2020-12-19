@@ -87,7 +87,7 @@ defmodule ExMon.GameTest do
   end
 
   describe "player/0" do
-    test "return the player" do
+    test "returns the player" do
       player = Player.build("Gui", :voadora, :cabecada, :cura)
       computer = Player.build("Robotiniki", :chute, :soco, :cura)
 
@@ -100,7 +100,7 @@ defmodule ExMon.GameTest do
   end
 
   describe "turn/0" do
-    test "return turn" do
+    test "returns the turn" do
       player = Player.build("Gui", :voadora, :cabecada, :cura)
       computer = Player.build("Robotiniki", :chute, :soco, :cura)
 
@@ -113,7 +113,7 @@ defmodule ExMon.GameTest do
   end
 
   describe "fetch_player/0" do
-    test "return turn" do
+    test "returns the fetch_player" do
       player = Player.build("Gui", :voadora, :cabecada, :cura)
       computer = Player.build("Robotiniki", :chute, :soco, :cura)
 
