@@ -1,13 +1,20 @@
 # ExMon
 
-Para adicionar um player e iniciar a partida
-ExMon.create_player("Gui", :voadora, :cabecada, :cura) |> ExMon.start_game
+### Comandos do Jogo
 
-Para ver se movimento é válido
-ExMon.make_move(:voadora)
+Criar Jogador e Iniciar Partida:
+    
+    ExMon.create_player("Gui", :voadora, :cabecada, :cura) |> ExMon.start_game
 
-Para curar
-ExMon.make_move(:cura)
+Ataque:
 
-Para verificar o estado
-ExMon.Game.info
+    ExMon.make_move(:voadora)
+    ExMon.make_move(:cabecada)
+
+Cura:
+    
+    ExMon.make_move(:cura)
+
+Status da Partida:
+    
+    ExMon.Game.info
