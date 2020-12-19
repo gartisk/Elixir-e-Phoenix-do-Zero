@@ -86,4 +86,63 @@ defmodule ExMon.GameTest do
     end
   end
 
+  describe "player/0" do
+    test "return the player" do
+      player = Player.build("Gui", :voadora, :cabecada, :cura)
+      computer = Player.build("Robotiniki", :chute, :soco, :cura)
+
+      expected_response = %Player{life: 100, moves: %{move_avg: :voadora, move_heal: :cura, move_rnd: :cabecada}, name: "Gui"}
+
+      Game.start(computer, player)
+
+      assert expected_response == Game.player()
+    end
+  end
+
+  describe "turn/0" do
+    test "return turn" do
+      player = Player.build("Gui", :voadora, :cabecada, :cura)
+      computer = Player.build("Robotiniki", :chute, :soco, :cura)
+
+      expected_response = :player
+
+      Game.start(computer, player)
+
+      assert expected_response == Game.turn()
+    end
+  end
+
+  describe "fetch_player/0" do
+    test "return turn" do
+      player = Player.build("Gui", :voadora, :cabecada, :cura)
+      computer = Player.build("Robotiniki", :chute, :soco, :cura)
+
+      expected_response_computer = %Player{
+        life: 100,
+        moves: %{
+          move_avg: :chute,
+          move_heal: :cura,
+          move_rnd: :soco
+        },
+        name: "Robotiniki"
+      }
+
+      expected_response_player = %Player{
+        life: 100,
+        moves: %{
+          move_avg: :voadora,
+          move_heal: :cura,
+          move_rnd: :cabecada
+        },
+        name: "Gui"
+      }
+
+      Game.start(computer, player)
+
+      assert expected_response_computer == Game.fetch_player(:computer)
+
+      assert expected_response_player == Game.fetch_player(:player)
+    end
+  end
+
 end
