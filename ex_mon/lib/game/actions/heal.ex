@@ -1,4 +1,4 @@
-defmodule  ExMon.Game.Actions.Heal do
+defmodule ExMon.Game.Actions.Heal do
   alias ExMon.Game
   alias ExMon.Game.Status
 
@@ -6,7 +6,7 @@ defmodule  ExMon.Game.Actions.Heal do
 
   def heal_life(player) do
     player
-    |> Game.fetch_player
+    |> Game.fetch_player()
     |> Map.get(:life)
     |> calculate_total_life()
     |> set_life(player)

@@ -8,6 +8,7 @@ defmodule ExMon.Game.Actions.Attack do
 
   def attack_opponent(opponent, move) do
     damage = calculate_power(move)
+
     opponent
     |> Game.fetch_player()
     |> Map.get(:life)

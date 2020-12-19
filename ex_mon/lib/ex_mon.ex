@@ -25,7 +25,8 @@ defmodule ExMon do
     |> handle_status(move)
   end
 
-  defp handle_status(:game_over, _move), do:  Status.print_round_message(Game.info())
+  defp handle_status(:game_over, _move), do: Status.print_round_message(Game.info())
+
   defp handle_status(_other, move) do
     move
     |> Actions.fetch_move()
@@ -48,7 +49,6 @@ defmodule ExMon do
   defp computer_move(%{turn: :computer, status: :continue}) do
     move = {:ok, Enum.random(@computer_moves)}
     do_move(move)
-
   end
 
   defp computer_move(_), do: :ok
