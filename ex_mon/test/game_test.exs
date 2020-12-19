@@ -66,12 +66,14 @@ defmodule ExMon.GameTest do
       # Inicia jogo com novo estado.
       new_state = %{
         computer: %Player{
-          life: 85,                                                           # Modificado apenas a titulo de exemplo
+          # Modificado apenas a titulo de exemplo
+          life: 85,
           moves: %{move_avg: :chute, move_heal: :cura, move_rnd: :soco},
           name: "Robotiniki"
         },
         player: %Player{
-          life: 50,                                                           # Modificado apenas a titulo de exemplo
+          # Modificado apenas a titulo de exemplo
+          life: 50,
           moves: %{move_avg: :voadora, move_heal: :cura, move_rnd: :cabecada},
           name: "Gui"
         },
@@ -91,7 +93,11 @@ defmodule ExMon.GameTest do
       player = Player.build("Gui", :voadora, :cabecada, :cura)
       computer = Player.build("Robotiniki", :chute, :soco, :cura)
 
-      expected_response = %Player{life: 100, moves: %{move_avg: :voadora, move_heal: :cura, move_rnd: :cabecada}, name: "Gui"}
+      expected_response = %Player{
+        life: 100,
+        moves: %{move_avg: :voadora, move_heal: :cura, move_rnd: :cabecada},
+        name: "Gui"
+      }
 
       Game.start(computer, player)
 
@@ -144,5 +150,4 @@ defmodule ExMon.GameTest do
       assert expected_response_player == Game.fetch_player(:player)
     end
   end
-
 end
