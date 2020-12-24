@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :ex_mon, ExMon.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "admin",
   database: "ex_mon_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
