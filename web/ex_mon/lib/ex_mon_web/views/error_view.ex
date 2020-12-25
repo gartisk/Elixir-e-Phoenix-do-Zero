@@ -16,8 +16,12 @@ defmodule ExMonWeb.ErrorView do
     %{errors: %{detail: Phoenix.Controller.status_message_from_template(template)}}
   end
 
-  def render("400.json", %{result: result}) do
+  def render("400.json", %{result: %Ecto.Changeset{} = result}) do
     %{message: translate_erros(result)}
+  end
+
+  def render("400.json", %{result: message}) do
+    %{message: message}
   end
 
   defp translate_erros(changeset) do
