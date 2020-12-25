@@ -38,7 +38,12 @@ ExMon.Trainer.Update.call(params)
 Testar Poke Client API
 
 ```
-ExMon.PokeApi.Client("pikachu")
+ExMon.PokeApi.Client.get_pokemon("pikachu")
+```
+
+```
+{:ok, pokemon} = "scyther" |> ExMon.PokeApi.Client.get_pokemon()
+ExMon.Pokemon.build(pokemon)
 ```
 
 ### Anotações:
@@ -51,3 +56,11 @@ ExMon.PokeApi.Client("pikachu")
     import Ecto.Changeset, only:[traverse_erros: 2]
 ```
 *ref: fallback_controller.ex*
+
+**@enforce_keys**
+força o uso de todas as chaves de um estrutura;
+```
+    @keys [:id, :name, :weight: :types]
+    @enforce_keys @keys
+```
+*ref: pokemon.ex*
