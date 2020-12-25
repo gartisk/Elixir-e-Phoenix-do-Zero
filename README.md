@@ -50,6 +50,19 @@ ExMon.Pokemon.build(pokemon)
 ExMon.fetch_pokemon("pikachu") 
 ```
 
+Inserindo um pokémon no banco
+
+```
+params = %{"name" => "pikachu", "nickname" => "Bigodin", "trainer_id" => "07071f4d-6582-4c87-bcd7-74f24713caee"}
+ExMon.Trainer.Pokemon.Create.call(params)
+```
+
+Visualizar todos os pokémons
+
+```
+ExMon.Repo.all(ExMon.Trainer.Pokemon)
+```
+
 ### Anotações:
 
 **put_view**: Quando queremos utilizar uma view que tem um nome diferente do controle, precisamos utilizar a função put_view.
