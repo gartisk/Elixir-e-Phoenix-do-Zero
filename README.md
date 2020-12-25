@@ -68,3 +68,7 @@ força o uso de todas as chaves de um estrutura;
     @enforce_keys @keys
 ```
 *ref: pokemon.ex*
+
+**@derive Jason.Encoder**
+Essa diretiva permite que automaticamente a struct consegue ser encodada para JSON
+*ref: pokemon.ex*
