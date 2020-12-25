@@ -46,6 +46,10 @@ ExMon.PokeApi.Client.get_pokemon("pikachu")
 ExMon.Pokemon.build(pokemon)
 ```
 
+```
+ExMon.fetch_pokemon("pikachu") 
+```
+
 ### Anotações:
 
 **put_view**: Quando queremos utilizar uma view que tem um nome diferente do controle, precisamos utilizar a função put_view.
