@@ -16,7 +16,7 @@ mix credo
 
 A configuração do credo fica em ex_mon/.credo.exs
 
-Para viusualizar todas as rotas:
+Para visualizar todas as rotas:
 
 ```
 mix phx.routes
