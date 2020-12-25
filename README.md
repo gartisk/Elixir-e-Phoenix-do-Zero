@@ -35,6 +35,12 @@ params = %{"id" => "53d91561-e609-414c-a8a0-f05d0c074859", "name" => "Crazy", "p
 ExMon.Trainer.Update.call(params)
 ```
 
+Testar Poke Client API
+
+```
+ExMon.PokeApi.Client("pikachu")
+```
+
 ### Anotações:
 
 **put_view**: Quando queremos utilizar uma view que tem um nome diferente do controle, precisamos utilizar a função put_view.
