@@ -1,9 +1,25 @@
 defmodule ExMonWeb.TrainersView do
   use ExMonWeb, :view
 
-  def render("create.json", %{trainer: trainer}) do
+  alias ExMon.Trainer
+
+  def render("create.json", %{trainer: %Trainer{id: id, name: name, inserted_at: inserted_at}}) do
     %{
-      message: "Trainer created!"
+      message: "Trainer created!",
+      trainer: %{
+        id: id,
+        name: name,
+        inserted_at: inserted_at
+      }
     }
   end
+
+  def render("show.json", %{trainer: %Trainer{id: id, name: name, inserted_at: inserted_at}}) do
+    %{
+      id: id,
+      name: name,
+      inserted_at: inserted_at
+    }
+  end
+
 end
