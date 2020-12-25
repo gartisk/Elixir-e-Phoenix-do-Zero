@@ -1,25 +1,38 @@
-Material do curso Elixir e Phoenix do zero! Crie sua primeira API Phoenix.
-https://www.udemy.com/course/elixir-e-phoenix-do-zero/
+Curso [Elixir e Phoenix do zero! Crie sua primeira API Phoenix]([https://link](https://www.udemy.com/course/elixir-e-phoenix-do-zero/))
 
-
-Para instalar alguma dependencia:
+Baixar Depedências:
 
 ```
 mix deps.get
 ```
 
-Para executar o credo
+#### Credo
+A configuração do credo fica em ex_mon/.credo.exs
+Executar Credo:
 
 ```
 mix credo
 ```
 
-A configuração do credo fica em ex_mon/.credo.exs
+### ExMon WEB
 
 Para visualizar todas as rotas:
 
 ```
 mix phx.routes
+```
+
+Visualizar todos os trainers:
+
+```
+ExMon.Repo.all(ExMon.Trainer)
+```
+
+Editar um trainer
+
+```
+params = %{"id" => "53d91561-e609-414c-a8a0-f05d0c074859", "name" => "Crazy", "password" => "789456"} 
+ExMon.Trainer.Update.call(params)
 ```
 
 ### Anotações:
