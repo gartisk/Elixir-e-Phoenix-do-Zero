@@ -75,6 +75,12 @@ Para carregar o pokemon e seus respectivo treinador:
 ExMon.Trainer.Pokemon.Get.call("80aff1df-bd10-440f-b6ed-c84a0980aaeb")
 ```
 
+Para atualizar um pokemon
+
+```
+ExMon.Trainer.Pokemon.Update.call(%{"id" => "80aff1df-bd10-440f-b6ed-c84a0980aaeb", "nickname" => "orelhinha"}) 
+```
+
 ### Anotações:
 
 **put_view**: Quando queremos utilizar uma view que tem um nome diferente do controle, precisamos utilizar a função put_view.

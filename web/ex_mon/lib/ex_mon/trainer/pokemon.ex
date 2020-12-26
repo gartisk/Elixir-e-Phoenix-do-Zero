@@ -30,4 +30,11 @@ defmodule ExMon.Trainer.Pokemon do
       |> assoc_constraint(:trainer)
       |> validate_length(:nickname, min: 2)
   end
+
+  def update_changeset(pokemon, params) do
+    pokemon
+    |> cast(params, [:nickname])
+    |> validate_required([:nickname])
+    |> validate_length(:nickname, min: 2)
+  end
 end
