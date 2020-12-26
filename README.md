@@ -63,6 +63,18 @@ Visualizar todos os pokémons
 ExMon.Repo.all(ExMon.Trainer.Pokemon)
 ```
 
+Para carregar o treinador e os pokemons associados a ele:
+
+```
+ExMon.Repo.get(ExMon.Trainer, "07071f4d-6582-4c87-bcd7-74f24713caee") |> ExMon.Repo.preload(:pokemon)
+```
+
+Para carregar o pokemon e seus respectivo treinador:
+
+```
+ExMon.Trainer.Pokemon.Get.call("80aff1df-bd10-440f-b6ed-c84a0980aaeb")
+```
+
 ### Anotações:
 
 **put_view**: Quando queremos utilizar uma view que tem um nome diferente do controle, precisamos utilizar a função put_view.
