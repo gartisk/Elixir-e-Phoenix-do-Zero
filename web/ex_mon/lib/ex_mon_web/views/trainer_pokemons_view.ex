@@ -10,7 +10,7 @@ defmodule ExMonWeb.TrainerPokemonsView do
           inserted_at: inserted_at,
           nickname: nickname,
           types: types,
-          trainer_id: trainer_id,
+          trainer_id: %{id: trainer_id, name: trainer_name},
           weight: weight
         }
       }) do
@@ -22,10 +22,34 @@ defmodule ExMonWeb.TrainerPokemonsView do
         inserted_at: inserted_at,
         nickname: nickname,
         types: types,
-        trainer_id: trainer_id,
+        trainer_id: %{id: trainer_id, name: trainer_name},
         weight: weight
       }
     }
+  end
+
+  def render("show.json", %{
+    pokemon: %Pokemon{
+      id: id,
+      name: name,
+      inserted_at: inserted_at,
+      nickname: nickname,
+      types: types,
+      trainer: %{id: trainer_id, name: trainer},
+      weight: weight
+    }
+  }) do
+  %{
+    pokemon: %{
+      id: id,
+      name: name,
+      inserted_at: inserted_at,
+      nickname: nickname,
+      types: types,
+      trainer: %{id: trainer_id, name: trainer},
+      weight: weight
+    }
+  }
   end
 
 end
