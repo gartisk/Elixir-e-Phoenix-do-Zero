@@ -26,6 +26,5 @@ defmodule ExMon.Trainer.CreateTest do
       assert {:error, changeset} = response
       assert errors_on(changeset) == %{password: ["can't be blank"]}
     end
-
   end
 end

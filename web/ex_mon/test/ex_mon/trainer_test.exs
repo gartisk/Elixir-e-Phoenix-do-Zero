@@ -10,14 +10,14 @@ defmodule ExMon.TrainerTest do
       response = Trainer.changeset(params)
 
       assert %Ecto.Changeset{
-      changes: %{
-        name: "Gui",
-        password: "123456"
-      },
-      errors: [],
-      data: %ExMon.Trainer{},
-      valid?: true
-      } = response
+               changes: %{
+                 name: "Gui",
+                 password: "123456"
+               },
+               errors: [],
+               data: %ExMon.Trainer{},
+               valid?: true
+             } = response
     end
 
     test "where there are invalid params returns an invalid changeset" do
@@ -26,12 +26,12 @@ defmodule ExMon.TrainerTest do
       response = Trainer.changeset(params)
 
       assert %Ecto.Changeset{
-      changes: %{
-        password: "123456"
-      },
-      data: %ExMon.Trainer{},
-      valid?: false
-      } = response
+               changes: %{
+                 password: "123456"
+               },
+               data: %ExMon.Trainer{},
+               valid?: false
+             } = response
 
       assert errors_on(response) == %{name: ["can't be blank"]}
     end
@@ -44,10 +44,10 @@ defmodule ExMon.TrainerTest do
       response = Trainer.build(params)
 
       assert {:ok,
-        %ExMon.Trainer{
-          name: "Gui",
-          password: "123456"
-        }} = response
+              %ExMon.Trainer{
+                name: "Gui",
+                password: "123456"
+              }} = response
     end
 
     test "when there are invalid params, returns an error" do
@@ -55,10 +55,9 @@ defmodule ExMon.TrainerTest do
 
       {:error, response} = Trainer.build(params)
 
-      assert %Ecto.Changeset{ valid?: false } = response
+      assert %Ecto.Changeset{valid?: false} = response
 
       assert errors_on(response) == %{name: ["can't be blank"]}
     end
-
   end
 end
