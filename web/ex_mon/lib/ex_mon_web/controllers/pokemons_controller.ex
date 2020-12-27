@@ -11,7 +11,8 @@ defmodule ExMonWeb.PokemonsController do
 
   defp handle_response({:ok, pokemon}, conn) do
     conn
-    |> put_status(:ok)                  # tanto faz usar 200 ou :ok
+    # tanto faz usar 200 ou :ok
+    |> put_status(:ok)
     |> json(pokemon)
   end
 

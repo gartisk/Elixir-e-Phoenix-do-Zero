@@ -7,7 +7,6 @@ defmodule ExMon.Trainer.Pokemon.Delete do
       :error -> {:error, "Invalid ID format!"}
       {:ok, uuid} -> delete(uuid)
     end
-
   end
 
   defp delete(uuid) do

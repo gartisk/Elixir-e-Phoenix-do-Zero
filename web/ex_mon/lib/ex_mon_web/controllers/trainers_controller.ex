@@ -37,10 +37,10 @@ defmodule ExMonWeb.TrainersController do
 
   defp handle_response({:ok, trainer}, conn, view, status) do
     conn
-    |> put_status(status)                  # tanto faz usar 200 ou :ok
+    # tanto faz usar 200 ou :ok
+    |> put_status(status)
     |> render(view, trainer: trainer)
   end
 
   defp handle_response({:error, _changeset} = error, _conn, _view, _status), do: error
-
 end

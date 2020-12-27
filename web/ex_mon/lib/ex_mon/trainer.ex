@@ -6,7 +6,7 @@ defmodule ExMon.Trainer do
 
   @primary_key {:id, Ecto.UUID, autogenerate: true}
 
-  #Campo virtual: true só existe no schema e não no banco.
+  # Campo virtual: true só existe no schema e não no banco.
   schema "trainers" do
     field :name, :string
     field :password_hash, :string

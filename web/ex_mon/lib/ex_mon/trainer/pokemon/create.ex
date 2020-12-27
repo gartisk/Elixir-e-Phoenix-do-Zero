@@ -37,5 +37,4 @@ defmodule ExMon.Trainer.Pokemon.Create do
 
   defp handle_build({:ok, pokemon}), do: Repo.insert(pokemon)
   defp handle_build({:error, _changeset} = error), do: error
-
 end

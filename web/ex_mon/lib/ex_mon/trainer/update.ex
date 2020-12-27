@@ -23,5 +23,4 @@ defmodule ExMon.Trainer.Update do
     |> Trainer.changeset(params)
     |> Repo.update()
   end
-
 end

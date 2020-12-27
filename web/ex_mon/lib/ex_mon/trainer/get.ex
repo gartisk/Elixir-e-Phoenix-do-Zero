@@ -7,7 +7,6 @@ defmodule ExMon.Trainer.Get do
       :error -> {:error, "Invalid ID format!"}
       {:ok, uuid} -> get(uuid)
     end
-
   end
 
   defp get(uuid) do
@@ -16,5 +15,4 @@ defmodule ExMon.Trainer.Get do
       trainer -> {:ok, trainer}
     end
   end
-
 end

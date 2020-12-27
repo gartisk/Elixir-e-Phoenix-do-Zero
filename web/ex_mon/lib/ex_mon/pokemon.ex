@@ -16,5 +16,4 @@ defmodule ExMon.Pokemon do
   end
 
   defp parse_types(types), do: Enum.map(types, fn item -> item["type"]["name"] end)
-
 end

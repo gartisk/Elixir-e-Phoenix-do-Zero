@@ -22,38 +22,50 @@ defmodule ExMonWeb.TrainerPokemonsView do
         inserted_at: inserted_at,
         nickname: nickname,
         types: types,
-        trainer_id:  trainer_id,
+        trainer_id: trainer_id,
         weight: weight
       }
     }
   end
 
   def render("show.json", %{
-    pokemon: %Pokemon{
-      id: id,
-      name: name,
-      inserted_at: inserted_at,
-      nickname: nickname,
-      types: types,
-      trainer: %{id: trainer_id, name: trainer},
-      weight: weight
+        pokemon: %Pokemon{
+          id: id,
+          name: name,
+          inserted_at: inserted_at,
+          nickname: nickname,
+          types: types,
+          trainer: %{id: trainer_id, name: trainer},
+          weight: weight
+        }
+      }) do
+    %{
+      pokemon: %{
+        id: id,
+        name: name,
+        inserted_at: inserted_at,
+        nickname: nickname,
+        types: types,
+        trainer: %{id: trainer_id, name: trainer},
+        weight: weight
+      }
     }
-  }) do
-  %{
-    pokemon: %{
-      id: id,
-      name: name,
-      inserted_at: inserted_at,
-      nickname: nickname,
-      types: types,
-      trainer: %{id: trainer_id, name: trainer},
-      weight: weight
-    }
-  }
   end
 
   def render("update.json", %{
-      pokemon: %Pokemon{
+        pokemon: %Pokemon{
+          id: id,
+          name: name,
+          inserted_at: inserted_at,
+          nickname: nickname,
+          types: types,
+          trainer_id: trainer_id,
+          weight: weight
+        }
+      }) do
+    %{
+      message: "Pokemon updated!",
+      pokemon: %{
         id: id,
         name: name,
         inserted_at: inserted_at,
@@ -62,19 +74,6 @@ defmodule ExMonWeb.TrainerPokemonsView do
         trainer_id: trainer_id,
         weight: weight
       }
-    }) do
-  %{
-    message: "Pokemon updated!",
-    pokemon: %{
-      id: id,
-      name: name,
-      inserted_at: inserted_at,
-      nickname: nickname,
-      types: types,
-      trainer_id:  trainer_id,
-      weight: weight
     }
-  }
   end
-
 end
