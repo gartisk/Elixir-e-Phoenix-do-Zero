@@ -80,7 +80,6 @@ Para atualizar um pokemon
 ```
 ExMon.Trainer.Pokemon.Update.call(%{"id" => "80aff1df-bd10-440f-b6ed-c84a0980aaeb", "nickname" => "orelhinha"}) 
 ```
-
 ### Anotações:
 
 **put_view**: Quando queremos utilizar uma view que tem um nome diferente do controle, precisamos utilizar a função put_view.
@@ -103,3 +102,7 @@ força o uso de todas as chaves de um estrutura;
 **@derive Jason.Encoder**
 Essa diretiva permite que automaticamente a struct consegue ser encodada para JSON
 *ref: pokemon.ex*
+
+#### Outros
+
+Para agilizar os testes via client HTTP salvei as entradas no arquivo **PostmanRequestsExported.json**
