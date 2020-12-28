@@ -45,7 +45,8 @@ defmodule ExMon.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:pbkdf2_elixir, "~> 1.2"},
-      {:tesla, "~> 1.3.0"}
+      {:tesla, "~> 1.3.0"},
+      {:guardian, "~> 2.0"}
     ]
   end
 
