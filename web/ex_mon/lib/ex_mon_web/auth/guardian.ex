@@ -21,6 +21,7 @@ defmodule ExMonWeb.Auth.Guardian do
     end
   end
 
+  @spec validate_password(ExMon.Trainer.t(), any) :: {:error, :unauthorized} | {:ok, binary}
   def validate_password(%Trainer{password_hash: hash} = trainer, password) do
     case Pbkdf2.verify_pass(password, hash) do
       true -> create_token(trainer)
