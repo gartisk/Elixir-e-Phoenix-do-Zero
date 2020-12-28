@@ -12,18 +12,20 @@ defmodule ExMonWeb.Controllers.TrainersControllerTest do
       response =
         conn
         |> get(Routes.trainers_path(conn, :show, id))
-        |> json_response(:ok)               # Também é necessário dar match com status
+        # Também é necessário dar match com status
+        |> json_response(:ok)
 
-      assert  %{"id" => _id, "inserted_at" => _inserted_at, "name" => "Gui"} = response
+      assert %{"id" => _id, "inserted_at" => _inserted_at, "name" => "Gui"} = response
     end
 
     test "when there is an error, returns the error", %{conn: conn} do
       response =
         conn
         |> get(Routes.trainers_path(conn, :show, "1234"))
-        |> json_response(:bad_request)               # Também é necessário dar match com status
+        # Também é necessário dar match com status
+        |> json_response(:bad_request)
 
-        expected_response = %{"message" => "Invalid ID format!"}
+      expected_response = %{"message" => "Invalid ID format!"}
       assert expected_response == response
     end
   end
