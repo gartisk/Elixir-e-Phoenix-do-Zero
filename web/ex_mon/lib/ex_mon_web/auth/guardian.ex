@@ -14,6 +14,7 @@ defmodule ExMonWeb.Auth.Guardian do
     |> ExMon.fetch_trainer()
   end
 
+  @spec authenticate(map) :: {:error, :unauthorized | <<_::144>>} | {:ok, binary}
   def authenticate(%{"id" => trainer_id, "password" => password}) do
     case Repo.get(Trainer, trainer_id) do
       nil -> {:error, "Trainer not found!"}
